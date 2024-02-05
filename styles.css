@@ -304,3 +304,6 @@
   }
     
   }
+  p{
+    text-wrap: pretty;
+  }
