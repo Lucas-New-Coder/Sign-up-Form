@@ -1,0 +1,218 @@
+/* reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+/* end reset */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+    background-color: #140f2a;
+}
+
+body *{
+    min-width: 0;
+}
+
+:root{
+    --main-color:rgb(44, 64, 89);
+    --border-color:white;
+    --border-color-active:rgb(0, 224, 0);
+    --border-color-focus:rgb(2, 107, 255);
+}
+
+h1{
+    font-family: 'Press Start 2P';  
+    font-size: 1.5rem;
+    color: white;
+}
+
+.container{
+    overflow: clip;
+}
+
+.contentContainer{
+    display: flex;
+    position: relative;
+    overflow: clip;
+    right: -100%;
+    animation: slideInRight ease-in-out 2000ms  forwards;
+}
+
+.img-background{
+    position: relative;
+    background: url(back.png) no-repeat;
+    background-size: cover ;
+    width: 60vw;
+    height: 100vh;
+}
+
+.mainForm{
+    display: flex;
+    background-color: var(--main-color);
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+}
+
+@keyframes slideInRight{
+    to{
+        right: 0;
+    }
+}
+
+
+.mainFormContent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.inputArea{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 30px;
+}
+.formTitle{
+    position: absolute;
+    transition: 300ms ease-in-out;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: 0;
+    margin-left: 15px;
+    top: 21%;
+    color: rgb(119, 133, 150);
+    font-family: monospace;
+    font-size: 1rem;
+    
+}
+
+input{
+    height: 40px;
+    width: 30vw;
+    position: relative;
+    z-index: 4;
+    background: transparent;
+    outline: none;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    color: white;
+    font-family: 'Changa';
+    font-size: 1rem;
+    padding-left: 10px;
+
+}
+
+input:focus{
+    border: 2px solid var(--border-color-focus,black);
+}
+input:user-valid{
+    border: 2px solid var(--border-color-active);
+}
+
+input:focus + .formTitle,
+input:user-valid + .formTitle
+{
+    transform: translateY(-24px);
+    z-index: 90;
+    background-color:var(--main-color);
+    scale: .8;
+}
+input:user-invalid
+{
+   border: 2px solid rgb(135, 30, 30);
+}
+
+input:user-invalid + .formTitle
+{
+    transform: translateY(-24px);
+    z-index: 90;
+    background-color:var(--main-color);
+    scale: .8;
+}
+
+
+
