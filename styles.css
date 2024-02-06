@@ -284,6 +284,7 @@
       height: 100vh;
       z-index: 0;
       background-image: url(back.png);
+      background-size: cover;
       background-position: center;
       opacity: 0.1;
     }
@@ -306,4 +307,7 @@
   }
   p{
     text-wrap: pretty;
+  }
+  *{
+    transition: 600ms;
   }
